@@ -54,7 +54,9 @@ class PrototypesController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless user_signed_in?
+    unless user_signed_in?
+      redirect_to root_path
+    end
   end
 
 
